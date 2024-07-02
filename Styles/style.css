@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* pemite importar las fuentes de texto desde la API de google fonts*/
+
+
+:root{
+    --color-primario:#973131; /*en esta parte se declaran las variables ya sean colores o fuentes de letras
+                                con el fin de que solo se tengan que cambiar los elementos de las varibles
+                                y no valor por valor; con esto se aplican los colores en todo el proyecto*/
+    --color-secundario:#E0A75E;
+    --color-terciario: #F9D689;
+    --color-cuaternario: #272727;
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-kronaone: "Krona One", sans-serif;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+ 
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 2% 0% 0% 6%;
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; 
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+
+}
+
+.presentacion{
+    display: flex;                       /* especifica el uso de flexbox para el diseño del contenido*/
+    align-items: center;                  /* centra todos los objetos que se encuentran en la pagina*/
+    padding: 2% 6%;                          /* especifica los pixeles para separar el contnido de las margenes de la pagina*/
+    justify-content: space-between;         /*separa los objetos de la pagina web, es decir, 
+                                            separa los textos y la imagenes que contenga la pagina*/
+    gap: 82px;
+}
+
+
+.presentacion__contenido{
+    width: 50%;                           /* especifica el ancho que deben ocupar los elementos de la pagina*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.presentacion__titulo{
+    font-size: 2.25rem;                   /* espcifica el tamaño de la letra del titulo de acuerdo 
+                                            al layout de figma*/
+    font-family: var(--fuente-kronaone); /* importa la fuente krona one para el parrafo de acuedo  
+                                           con el layout de figma; en este caso se crearon variables que 
+                                           contienen los valores de los tipos de letras*/
+}
+
+.titulo-destacado{
+    color: var(--color-terciario);
+}
+
+.presentacion__parrafo{
+    font-size: 1.5rem;                          /* espcifica el tamaño de la letra del titulo de acuerdo 
+                                                al layout de figma*/
+    font-family: var(--fuente-montserrat); /* importa la fuente montserrat para el parrafo
+                                            de acuedo  con el layout de figma*/
+}
+
+.presentacion__enlace{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__redessociales{
+    font-family: var(--fuente-kronaone);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__link{
+    width: 50%;
+                         /* se quito la caracteristica background- color con el fin de quitarle el color de fondo*/
+    text-align: center; /*alinea el texto en los botones*/
+    padding: 21.5px 0; /*define el espacio en entre el contenido de texto y los bordes*/
+    border-radius: 8px; /*le da la forma redonda a los botones de acuerdo con el layout de figma*/
+    font-family: var(--fuente-montserrat);
+    font-weight: 600; /*especifica el ancho del texto*/
+    font-size: 1.5rem; /*este es el tamaño de la letra de los elementos*/
+    text-decoration: none; /* elimina el subrayado de los botones*/
+    color: var(--color-secundario); /*especifica el color de la letra de los botones*/
+    border: 2px solid var(--color-terciario); /*especifica el estilo del borde para los botones*/
+    display: flex; /*alinea los contenidos del eje horizontal que en este caso son los botones*/
+    justify-content: center; /*centra los contenidos ubicados en el eje horizontal*/
+    gap: 10px; /*gap permite crear un espacio entre los elementos alineados*/
+}
+
+
+.presentacion__link:hover{ /*el selector hover permite interactuar con el puntero es decir que al momento de 
+                            colocar el mouse sobre el elemento al que se aplico hover cambia el color
+                            de acuerdo al color que se establecio en background color que es el color de 
+                            fondo*/
+
+    background-color: var(--color-cuaternario);
+    cursor: pointer;
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+.footer{
+    background-color: var(--color-terciario);
+    color: var(--color-primario);
+    text-align: center;
+    padding: 24px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px){
+
+    .header{
+        padding: 10%;
+    }
+
+    .header__menu{
+        justify-content: center;
+    }
+    .presentacion{
+        flex-direction: column-reverse;
+    }
+
+    .presentacion__contenido{
+        width: auto;
+    }
+}
